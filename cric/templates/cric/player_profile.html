@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h1>Player Profile</h1>
+<br>
+<table border="2px">
+    <tr>
+        <th>Country Name</th>
+        <th>Team Name</th>
+        <th>Player Name</th>
+        <th>Role</th>
+        <th>Bats</th>
+        <th>Bowls</th>
+    </tr>
+
+    {% for players in players %}
+        {% if players.player_name == player.player_name %}
+            <tr>
+                <td>{{ players.country }}</td>
+                <td>{{ players.team_name }}</td>
+                <td>{{ players.player_name }}</td>
+                <td>{{ players.role }}</td>
+                <td>{{ players.bats }}</td>
+                <td>{{ players.bowls }}</td>
+            </tr>
+        {% endif %}
+{% endfor %}
+</table>
+</body>
+</html>

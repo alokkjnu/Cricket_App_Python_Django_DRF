@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>
+            <h2>Country Name</h2>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            {% for country in country %}
+                <a href="{% url 'cric:players' country.id %}">{{ country.country }}<br></a>
+            {% endfor %}
+        <a href="{% url 'cric:venue' %}">Venue</a><br>
+        <a href="{% url 'cric:match' %}">Match</a><br>
+        <a href="{% url 'cric:match_summary' %}">Match Summary</a>
+        </td>
+    </tr>
+
+</table>
+</body>
+</html>

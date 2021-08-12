@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Players List</h1>
+<br>
+<table>
+    <tr>
+        <th>Country Name</th>
+        <th>Team Name</th>
+    </tr>
+    {% for team in team %}
+        {% if team.country == country.country %}
+            <tr>
+                <td>{{ team.country }}</td>
+                <td>{{ team.team_name }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+
+
+
+<table border="2px">
+    <tr>
+        <th>Player Name</th>
+    </tr>
+
+    {% for players in players %}
+        {% if players.country == country.country %}
+            <tr>
+                <td>
+                    <a href="{% url 'cric:player_profile' players.id %}">{{ players.player_name }}</a>
+                </td>
+
+            </tr>
+
+    {% endif %}
+{% endfor %}
+</table>
+</body>
+</html>

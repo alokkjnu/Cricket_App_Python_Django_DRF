@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Match Summary</title>
+</head>
+<body>
+<h1>Match Summary</h1>
+<table border="1px">
+    <tr>
+        <th>Country</th>
+        <th>Venue Name</th>
+        <th>Match</th>
+        <th>Match Type</th>
+        <th>Match Start Date</th>
+        <th>Match End Date</th>
+        <th>Winner</th>
+        <th>Looser</th>
+        <th>Man of the Match</th>
+        <th>Bowler of the Match</th>
+        <th>Best Fielder</th>
+    </tr>
+
+
+    {% for match in match %}
+        <tr>
+            <td>{{ match.country }}</td>
+            <td>{{ match.venue_name }}</td>
+            <td>{{ match.list_of_matches }}</td>
+            <td>{{ match.match_type }}</td>
+            <td>{{ match.start_date }}</td>
+            <td>{{ match.end_date }}</td>
+            <td>{{ match.winner }}</td>
+            <td>{{ match.looser }}</td>
+            <td>{{ match.man_of_the_match }}</td>
+            <td>{{ match.bowler_of_the_match }}</td>
+            <td>{{ match.best_fielder }}</td>
+
+        </tr>
+    {% endfor %}
+</table>
+<h2>Score Board</h2>
+<h4>India Batting</h4>
+<table border="1px">
+    <tr>
+        <th>Player Name</th>
+        <th>Run</th>
+        <th>Ball</th>
+        <th>4s</th>
+        <th>6s</th>
+        <th>S/R</th>
+    </tr>
+    {% for bat in bat %}
+        {% if bat.team == 1 %}
+            <tr>
+                <td>{{ bat.player_name }}</td>
+                <td>{{ bat.run }}</td>
+                <td>{{ bat.balls }}</td>
+                <td>{{ bat.four }}</td>
+                <td>{{ bat.six }}</td>
+                <td>{{ bat.sr }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+
+
+</table>
+<h4>England Bowling</h4>
+<table border="1px">
+    <tr>
+        <th>Player Name</th>
+        <th>Over</th>
+        <th>Median</th>
+        <th>Run</th>
+        <th>Wicket</th>
+        <th>Economy</th>
+    </tr>
+    {% for ball in ball %}
+        {% if ball.team == 2 %}
+            <tr>
+                <td>{{ ball.player_name }}</td>
+                <td>{{ ball.overs }}</td>
+                <td>{{ ball.median }}</td>
+                <td>{{ ball.run }}</td>
+                <td>{{ ball.wicket }}</td>
+                <td>{{ ball.economy }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+
+</table>
+<h4>England Batting</h4>
+<table border="1px">
+    <tr>
+        <th>Player Name</th>
+        <th>Run</th>
+        <th>Ball</th>
+        <th>4s</th>
+        <th>6s</th>
+        <th>S/R</th>
+    </tr>
+    {% for bat in bat %}
+        {% if bat.team == 2 %}
+            <tr>
+                <td>{{ bat.player_name }}</td>
+                <td>{{ bat.run }}</td>
+                <td>{{ bat.balls }}</td>
+                <td>{{ bat.four }}</td>
+                <td>{{ bat.six }}</td>
+                <td>{{ bat.sr }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+
+</table>
+<h4>India Bowling</h4>
+<table border="1px">
+    <tr>
+        <th>Player Name</th>
+        <th>Over</th>
+        <th>Median</th>
+        <th>Run</th>
+        <th>Wicket</th>
+        <th>Economy</th>
+    </tr>
+    {% for ball in ball %}
+        {% if ball.team == 1 %}
+            <tr>
+                <td>{{ ball.player_name }}</td>
+                <td>{{ ball.overs }}</td>
+                <td>{{ ball.median }}</td>
+                <td>{{ ball.run }}</td>
+                <td>{{ ball.wicket }}</td>
+                <td>{{ ball.economy }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+
+</table>
+</body>
+</html>

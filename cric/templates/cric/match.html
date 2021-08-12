@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Match</title>
+</head>
+<body>
+<table border="1px">
+    <tr>
+        <th>Country</th>
+        <th>Venue Name</th>
+        <th>Match</th>
+        <th>Match Type</th>
+        <th>Match Start Date</th>
+        <th>Match End Date</th>
+        <th>Winner</th>
+        <th>Looser</th>
+        <th>Man of the Match</th>
+        <th>Bowler of the Match</th>
+        <th>Best Fielder</th>
+    </tr>
+    {% for match in match %}
+        <tr>
+            <td>{{ match.country }}</td>
+            <td>{{ match.venue_name }}</td>
+            <td>{{ match.list_of_matches }}</td>
+            <td>{{ match.match_type }}</td>
+            <td>{{ match.start_date }}</td>
+            <td>{{ match.end_date }}</td>
+            <td>{{ match.winner }}</td>
+            <td>{{ match.looser }}</td>
+            <td>{{ match.man_of_the_match }}</td>
+            <td>{{ match.bowler_of_the_match }}</td>
+            <td>{{ match.best_fielder }}</td>
+
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
